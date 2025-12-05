@@ -1,16 +1,14 @@
-from matplotlib import pyplot as plt
+import matplotlib.pyplot as plt
 
-
-def grafica(Qo, Pwf):
-    plt.figure(figsize=(8,6))  # tamaño opcional
-
-    plt.plot(Qo,Pwf, marker='o', color='b', linewidth=2)
-
+def grafica(Pwf, Qo):
+    fig = plt.figure(figsize=(8, 6))  # tamaño opcional
+    ax = fig.add_subplot(111)
+    ax.plot(Qo, Pwf, marker='o', color='b', linewidth=2)
     # Etiquetas y título
-
-    plt.title("Curva IPR - Yacimiento saturado", fontsize=14)
-    plt.ylabel("Presión de fondo fluyente Pwf (psi)", fontsize=12)
-    plt.xlabel("Tasa de producción Q (bbl/día)", fontsize=12)
+    ax.set_title("Curva IPR - yacimiento Saturado", fontsize=14)
+    ax.set_ylabel("Presión de fondo fluyente Pwf (psi)", fontsize=12)
+    ax.set_xlabel("Tasa de producción Q (bbl/día)", fontsize=12)
     # Cuadrícula y visualización
-    plt.grid(True, linestyle='--', alpha=0.6)
-    plt.show()
+    ax.grid(True, linestyle='--', alpha=0.6)
+    ax.legend()
+    return fig
