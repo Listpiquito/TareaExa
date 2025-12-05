@@ -26,7 +26,7 @@ def main():
     sheet["B6"].options(transpose=True).value = Qo
     grafica1 = grafica(Pwf, Qo)
     sheet.pictures.add(grafica1, name = 'Grafica IPR', update = True, left = sheet.range('G3').left, top = sheet.range('G3').top)
-
+#ok
 
 
 
